@@ -1,0 +1,35 @@
+<style>
+
+</style>
+
+
+
+
+
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1924826890862939',
+      cookie     : true,
+      xfbml      : true,
+      
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<a id= "login" href="/users/sign_up"> Log in </a>
+<a id="logout" href="/users/sign_out"> Log out </a>
+<%= render current_user.try(:name) %>
+
+</body>
